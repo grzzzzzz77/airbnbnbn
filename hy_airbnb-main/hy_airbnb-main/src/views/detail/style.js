@@ -11,4 +11,8 @@ export const DetailWrapper = styled.div`
   .day {
     margin-right: 50px;
   }
+  .share {
+    margin-top: 500px;
+    margin-right: 150px;
+  }
 `;
