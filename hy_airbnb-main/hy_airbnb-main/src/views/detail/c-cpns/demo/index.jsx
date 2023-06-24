@@ -52,24 +52,38 @@ const RentDetailsPage = () => {
         <Col span={12}>
           <Title level={3}>房屋信息</Title>
           <Divider />
-          <Text strong>位置：</Text>
-          <Text>{detailInfo.name}</Text>
+          <Text strong style={{ fontSize: "24px" }}>
+            位置：
+          </Text>
+          <Text style={{ fontSize: "20px" }}>{detailInfo.name}</Text>
           <br />
           <br />
-          <Text strong>价格：</Text>
-          <Text>{detailInfo.price_format}/晚</Text>
+          <Text strong style={{ fontSize: "24px" }}>
+            价格：
+          </Text>
+          <Text style={{ fontSize: "20px" }}>{detailInfo.price_format}/晚</Text>
           <br />
           <br />
-          <Text strong>户型：</Text>
-          <Text>{detailInfo.verify_info.messages}</Text>
+          <Text strong style={{ fontSize: "24px" }}>
+            户型：
+          </Text>
+          <Text style={{ fontSize: "20px" }}>
+            {detailInfo.verify_info.messages}
+          </Text>
           <br />
           <br />
-          <Text strong>点评：</Text>
-          <Text>{detailInfo.reviews[0].comments}</Text>
+          <Text strong style={{ fontSize: "24px" }}>
+            点评：
+          </Text>
+          <Text style={{ fontSize: "20px" }}>
+            {detailInfo.reviews[0].comments}
+          </Text>
           <br />
 
           <div style={{ marginTop: "20px" }}>
-            <Title level={4}>评论</Title>
+            <Title level={4} style={{ fontSize: "24px" }}>
+              评论
+            </Title>
             <Divider />
             <List
               itemLayout="horizontal"
