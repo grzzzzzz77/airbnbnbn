@@ -17,11 +17,11 @@ import { shallowEqual, useSelector } from "react-redux";
 const { Title, Text } = Typography;
 const { TextArea } = Input;
 
-const RentDetailsPage = () => {
+const RentDetailsPage = (props) => {
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
   const [rating, setRating] = useState(0);
-
+  const {name,price,message,reviews}=props;
   const handleCommentSubmit = () => {
     if (commentText && rating) {
       const newComment = {
@@ -39,9 +39,10 @@ const RentDetailsPage = () => {
   };
 
   /** redux获取数据 */
-  const { detailInfo } = useSelector(
+  const { detailInfo, } = useSelector(
     (state) => ({
       detailInfo: state.detail.detailInfo,
+
     }),
     shallowEqual
   );
@@ -55,20 +56,20 @@ const RentDetailsPage = () => {
           <Text strong style={{ fontSize: "24px" }}>
             位置：
           </Text>
-          <Text style={{ fontSize: "20px" }}>{detailInfo.name}</Text>
+          <Text style={{ fontSize: "20px" }}>{name||detailInfo.name}</Text>
           <br />
           <br />
           <Text strong style={{ fontSize: "24px" }}>
             价格：
           </Text>
-          <Text style={{ fontSize: "20px" }}>{detailInfo.price_format}/晚</Text>
+          <Text style={{ fontSize: "20px" }}>{price||detailInfo.price_format}/晚</Text>
           <br />
           <br />
           <Text strong style={{ fontSize: "24px" }}>
             户型：
           </Text>
           <Text style={{ fontSize: "20px" }}>
-            {detailInfo.verify_info.messages}
+            {message||detailInfo.verify_info.messages}
           </Text>
           <br />
           <br />
@@ -76,7 +77,11 @@ const RentDetailsPage = () => {
             点评：
           </Text>
           <Text style={{ fontSize: "20px" }}>
-            {detailInfo.reviews[0].comments}
+            if (reviews && reviews.comments) {
+             reviews.comments
+          } else if (detailInfo.reviews[0] && detailInfo.reviews[0].comments) {
+            detailInfo.reviews[0].comments
+          }
           </Text>
           <br />
 

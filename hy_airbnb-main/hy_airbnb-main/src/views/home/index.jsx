@@ -39,7 +39,7 @@ const Home = memo(() => {
           <SectionTabs tabNames={tabNames} tabClick={tabClickHandle}/>
           <SectionRooms roomList={discountInfo.dest_list?.[name]} itemWidth="33.33333%"/>
         </div> */}
-        { isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}/>}
+        { isEmptyO(discountInfo) && <HomeSectionV2 infoData={discountInfo}  />}
         { isEmptyO(recommendInfo) && <HomeSectionV2 infoData={recommendInfo}/>}
         { isEmptyO(longforInfo) && <HomeLongfor infoData={longforInfo}/> }
         { isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData={goodPriceInfo}/> }
