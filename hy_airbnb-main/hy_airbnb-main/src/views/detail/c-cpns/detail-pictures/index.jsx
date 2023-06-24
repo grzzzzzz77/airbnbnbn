@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { PicturesWrapper } from "./style";
+import { Typography } from "antd";
 
 const DetailPictures = memo(() => {
   /** redux获取数据 */
@@ -11,8 +12,11 @@ const DetailPictures = memo(() => {
     shallowEqual
   );
 
+  const { Title } = Typography;
+
   return (
     <PicturesWrapper>
+      <Title level={2}>租房详情</Title>
       <div className="pictures">
         <div className="left">
           <div className="item">
