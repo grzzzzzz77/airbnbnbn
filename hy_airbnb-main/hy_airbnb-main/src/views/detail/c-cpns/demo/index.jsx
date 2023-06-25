@@ -77,11 +77,7 @@ const RentDetailsPage = (props) => {
             点评：
           </Text>
           <Text style={{ fontSize: "20px" }}>
-            if (reviews && reviews.comments) {
-             reviews.comments
-          } else if (detailInfo.reviews[0] && detailInfo.reviews[0].comments) {
-            detailInfo.reviews[0].comments
-          }
+            {detailInfo.reviews[0].comments}
           </Text>
           <br />
 
